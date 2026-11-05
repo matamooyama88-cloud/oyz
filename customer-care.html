@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Care – GNOCE Jewelry</title>
+    <meta name="description" content="Contact details, order help, and FAQs for GNOCE Jewelry customers.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --gold: #c9a24b;
+            --gold-light: #e8d9b5;
+            --ink: #000000;
+            --ink-soft: #d9d9d9;
+            --paper: #161616;
+            --cream: #0a0a0a;
+            --line: #2b2b2b;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', Arial, sans-serif;
+            background: var(--cream);
+            color: #ffffff;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a { text-decoration: none; }
+
+        /* Top announcement bar */
+        .announce {
+            background: var(--ink);
+            color: var(--gold);
+            text-align: center;
+            font-size: 12px;
+            letter-spacing: 0.08em;
+            padding: 8px 12px;
+            text-transform: uppercase;
+        }
+
+        /* Navbar */
+        nav {
+            background: var(--ink);
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            border-bottom: 1px solid rgba(201,162,75,0.35);
+        }
+
+        nav h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 28px;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            color: white;
+        }
+
+        nav h1 span { color: var(--gold); }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 32px;
+        }
+
+        nav ul li a {
+            color: #ffffff;
+            font-size: 0.85rem;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            padding-bottom: 4px;
+            border-bottom: 1px solid transparent;
+            transition: color 0.25s, border-color 0.25s;
+        }
+
+        nav ul li a:hover,
+        nav ul li a.active {
+            color: var(--gold);
+            border-color: var(--gold);
+        }
+
+        /* Page header */
+        .page-banner {
+            text-align: center;
+            padding: 70px 20px 50px;
+        }
+
+        .page-banner .eyebrow {
+            display: inline-block;
+            font-size: 12px;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 14px;
+        }
+
+        .page-banner h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 44px;
+            color: #ffffff;
+            font-weight: 600;
+        }
+
+        .page-banner .rule {
+            width: 60px;
+            height: 2px;
+            background: var(--gold);
+            margin: 18px auto 20px;
+        }
+
+        .page-banner p {
+            max-width: 480px;
+            margin: 0 auto;
+            font-size: 15px;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        .page-banner p a { color: var(--gold); }
+
+        /* Info panel */
+        .info-wrap {
+            max-width: 760px;
+            margin: 0 auto 90px;
+            padding: 0 40px;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .info-block {
+            background: var(--paper);
+            border: 1px solid var(--line);
+            border-radius: 4px;
+            padding: 30px;
+        }
+
+        .info-block h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 19px;
+            color: var(--gold);
+            margin-bottom: 10px;
+        }
+
+        .info-block p, .info-block a {
+            font-size: 13.5px;
+            color: #ffffff;
+            line-height: 1.7;
+        }
+
+        .info-block a {
+            color: var(--gold);
+            font-weight: 500;
+        }
+
+        .faq-cta {
+            background: #000000;
+            border: 1px solid var(--gold);
+            color: white;
+            text-align: center;
+        }
+
+        .faq-cta h4 { color: var(--gold); }
+
+        .faq-cta p { color: #ffffff; margin-bottom: 18px; }
+
+        .faq-cta .btn-gold {
+            display: inline-block;
+            padding: 11px 26px;
+            border: 1px solid var(--gold);
+            color: var(--gold);
+            font-size: 12px;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            border-radius: 2px;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .faq-cta .btn-gold:hover {
+            background: var(--gold);
+            color: var(--ink);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--ink);
+            color: #ffffff;
+            padding: 50px 50px 25px;
+        }
+
+        .footer-grid {
+            max-width: 1300px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 30px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .footer-grid h5 {
+            color: var(--gold);
+            font-size: 13px;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+        }
+
+        .footer-grid ul {
+            list-style: none;
+        }
+
+        .footer-grid ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-grid ul li a {
+            color: #ffffff;
+            font-size: 13px;
+            transition: color 0.25s;
+        }
+
+        .footer-grid ul li a:hover { color: var(--gold); }
+
+        footer .bottom {
+            text-align: center;
+            font-size: 12px;
+            color: #ffffff;
+            padding-top: 22px;
+            letter-spacing: 0.03em;
+        }
+
+        @media (max-width: 800px) {
+            nav { flex-direction: column; gap: 16px; padding: 20px; }
+            nav ul { flex-wrap: wrap; justify-content: center; gap: 16px; }
+            .footer-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="announce">Your story, beautifully told · 60-day returns · Free shipping over R800</div>
+
+    <!-- Navbar -->
+    <nav>
+        <h1>GNOCE <span>Jewelry</span></h1>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="frequently-asked-questions.html">FAQ</a></li>
+            <li><a href="contacts.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Page banner -->
+    <section class="page-banner">
+        <span class="eyebrow">Here to help</span>
+        <h2>Customer Care</h2>
+        <div class="rule"></div>
+        <p>Direct contact details, order support, and answers to common questions. Prefer to write to us instead? Head to our <a href="contacts.html">Contact Us</a> page.</p>
+    </section>
+
+    <!-- Info blocks -->
+    <div class="info-wrap">
+        <div class="info-block">
+            <h4>Get in Touch</h4>
+            <p>
+                Email: <a href="mailto:service@gnoce.co.za">service@gnoce.co.za</a><br>
+                Phone: 1-877-716-5888
+            </p>
+        </div>
+
+        <div class="info-block">
+            <h4>Working Hours</h4>
+            <p>
+                Monday – Friday: 9:00 AM – 5:00 PM<br>
+                Saturday: 9:00 AM – 2:00 PM<br>
+                Sunday: Closed<br>
+                <span style="color:#a3a3a3; font-size: 12px;">(South Africa Standard Time)</span>
+            </p>
+        </div>
+
+        <div class="info-block">
+            <h4>Order Changes</h4>
+            <p>Need to update an order after checkout? Email us with your order number, or reach out via Facebook or WhatsApp with your name and phone number.</p>
+        </div>
+
+        <div class="info-block faq-cta">
+            <h4>Have a Quick Question?</h4>
+            <p>Check our FAQ first — you may find an instant answer about orders, shipping, or returns.</p>
+            <a href="frequently-asked-questions.html" class="btn-gold">Visit FAQ</a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-grid">
+            <div>
+                <h5>Shop</h5>
+                <ul>
+                    <li><a href="products.html">All Jewelry</a></li>
+                    <li><a href="products.html">Charms</a></li>
+                    <li><a href="products.html">Necklaces</a></li>
+                    <li><a href="products.html">Bracelets</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5>Support</h5>
+                <ul>
+                    <li><a href="frequently-asked-questions.html">FAQ</a></li>
+                    <li><a href="#">Shipping</a></li>
+                    <li><a href="#">Returns Policy</a></li>
+                    <li><a href="contacts.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5>About</h5>
+                <ul>
+                    <li><a href="about.html">Our Story</a></li>
+                    <li><a href="#">Our Store</a></li>
+                    <li><a href="services.html">Services</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5>Working Hours</h5>
+                <ul>
+                    <li style="color:#ffffff;">Mon – Fri: 9AM – 5PM</li>
+                    <li style="color:#ffffff;">Saturday: 9AM – 2PM</li>
+                    <li style="color:#ffffff;">Sunday: Closed</li>
+                </ul>
+            </div>
+            <div>
+                <h5>Follow Us</h5>
+                <ul>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">WhatsApp</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="bottom">
+            <p>&copy; 2026 GNOCE Jewelry. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

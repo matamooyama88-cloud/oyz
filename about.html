@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About – Gnoce Jewell</title>
+    <meta name="description" content="Learn about GNOCE Jewelry — where knowledge meets sweetness. Discover our story, mission, and passion for beautiful jewelry.">
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            color: white;
+            text-align: center;
+            overflow-x: hidden;
+        }
+
+        /* Background Video */
+        .background-video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -2;
+        }
+
+        /* Dark Overlay */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: -1;
+        }
+
+        /* Navbar */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 5%;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.85), transparent);
+            z-index: 10;
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 0.95rem;
+            position: relative;
+            transition: color 0.25s;
+        }
+
+        .nav-links a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -4px;
+            width: 0;
+            height: 2px;
+            background: #ffb400;
+            transition: width 0.25s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* About Section */
+        .about {
+            max-width: 900px;
+            margin: auto;
+            padding: 140px 20px 80px;
+        }
+
+        .about h2 {
+            font-size: 40px;
+            margin-bottom: 20px;
+            color: #ffd700;
+        }
+
+        .about p {
+            font-size: 18px;
+            line-height: 1.8;
+            margin-bottom: 40px;
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Background Video -->
+    <video autoplay muted loop playsinline class="background-video">
+        <source src="nacklace#.mp4" type="video/mp4">
+    </video>
+
+    <!-- Overlay -->
+    <div class="overlay"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <h1 class="logo">GNOCE Jewelry</h1>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contacts.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- About Section -->
+    <section class="about">
+
+        <h2>IN-STORE MOMENTS</h2>
+
+        <p>
+            We help customers discover elegant jewelry pieces that match
+            their personality and style. Seeing is believing — come and
+            find the jewelry that suits you best!
+        </p>
+
+        <h2>Hi There, We're GNOCE</h2>
+
+        <p>
+            Gnosis means knowledge and memory, while Dolce represents
+            sweetness and softness.
+        </p>
+
+        <p>
+            GNOCE is where you shop for beautiful jewelry pieces that
+            commemorate your sweetest memories.
+        </p>
+
+        <p>
+            Founded in 2015, we believe jewelry should be fun and inspire
+            happiness. Our mission is to celebrate life's greatest moments
+            with unique and customizable pieces in a variety of styles,
+            allowing you to share your own story and create new cherished memories.
+        </p>
+
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 GNOCE JEWELRY BY OYAMA MATAMO.</p>
+    </footer>
+
+</body>
+</html>

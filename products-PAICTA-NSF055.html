@@ -1,0 +1,274 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products GNOCE JEWELRY</title>
+    <meta name="description" content="Browse GNOCE's featured necklace collection â€” silver, gold, and diamante styles for every occasion.">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #111;
+            color: #333;
+        }
+
+        /* Navbar */
+        nav {
+            background: #111;
+            color: black;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 50px;
+        }
+
+        nav h1 {
+            font-size: 28px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #ffb400;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 90vh;
+            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.6)),
+                        url('bgimage.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 20px;
+        }
+
+        .hero-content h2 {
+            font-size: 55px;
+            margin-bottom: 20px;
+        }
+
+        .hero-content p {
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            padding: 14px 30px;
+            background: #ffb400;
+            color: #111;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #e6a000;
+        }
+
+        /* Products */
+        .products {
+            padding: 60px 40px;
+            text-align: center;
+        }
+
+        .products h2 {
+            margin-bottom: 40px;
+            font-size: 40px;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 20px;
+        }
+
+        .card-content h3 {
+            margin-bottom: 10px;
+        }
+
+        .price {
+            color: #ffb400;
+            font-size: 22px;
+            font-weight: 700;
+            margin: 15px 0;
+        }
+
+        /* Footer */
+        footer {
+            background: #111;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav>
+        <h1>GNOCE Jewelry</h1>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="products.html">Product</a></li>
+            <li><a href="contacts.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h2>GNOCE Product Store</h2>
+            <p>We love seeing your beautiful shots with Gnoce jewelry!</p>
+            <a href="index.html"class="btn">Back to Home</a>
+        </div>
+    </section>
+	 <!-- Product 1 -->
+            <div class="strip-card">
+                <div class="strip-card-img-wrap">
+                    <img src="Gnoce harry potter hufferpuff badger.jpg" alt="Gnoce Harry Potter Hufflepuff Badger">
+                </div>
+                <div class="strip-card-info">
+                    <h3>Harry Potter Hufflepuff Badger</h3>
+                    <div class="strip-card-meta">
+                        <span class="strip-card-price">R 1,644.00</span>
+                        <a href="https://www.google.com/aclk?sa=L&ai=DChsSEwj0qfCv_bOXAxW1noMHHcW8K_UYACICCAEQDRoCZWY&co=1&ase=2&gclid=CjwKCAjwirLWBhBBEiwAlItbErmMU7D0g1t7e_AC98AAcG0cFo4w41KEtgZU2g_cbzu7C48W0yZJHRoCDcQQAvD_BwE&cid=CAASugHkaGUbEaly0MsqWvXvIdCiDdDHhKaErLNNvYVd3V95xloUrb5D4z24yaZFmCLMK1pRPpVYY3kjDjDWNhjCeoo6oRGCMqw92b0BraPfMTrxi64WkcJjnsQBgnmMm64irwvQ_Kf6Rk1247bYRCR8OKTJ3-82eb_wooXc_FBlnObMwl5er6EAd8ZU5uzNvU3xBFZukoJv3cJ9BflQtp8cbCHY2UMlMH3mIUmQwj45jJ6TjbAZlBcwvkd0xTo&cce=2&category=acrcp_v1_32&sig=AOD64_3K8oOr26JYqjKgWv36Kz8HlbjfKA&ctype=5&q=&nis=4&ved=2ahUKEwjCgumv_bOXAxWs87sIHZuALZIQ5bgDKAB6BAgJEAs&adurl=" class="Buy-now">Buy now</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="strip-card">
+                <div class="strip-card-img-wrap">
+                    <img src="spy x family yor forger pendant.jpg" alt="Spy x Family Yor Forger Pendant">
+                </div>
+                <div class="strip-card-info">
+                    <h3>Spy x Family Yor Forger Pendant</h3>
+                    <div class="strip-card-meta">
+                        <span class="strip-card-price">R 1,229.00</span>
+                        <a href="https://www.google.com/aclk?sa=L&ai=DChsSEwiAwvLc_LOXAxWwOwYAHXrbPD0YACICCAEQFhoCd3M&co=1&ase=2&gclid=CjwKCAjwirLWBhBBEiwAlItbEiKlgPo6u4R27mXd5JYg_tAhmTk6t_AoSUTms5l3mWEDMfCVV8Ue3xoCaGMQAvD_BwE&cid=CAASugHkaGUUIZ-rlVDGdK8bUn9Q3bEAUXAdgE_I6SP8CetMDjkrC9VqAAAnRUfLEatTwLxiOJT4hzmO_odyDHdqFp7XZ6Fqhfc38PAbHDMZNbVSLRd2CmxTNe-ZWpm053JFV9BEiJ7oFpXHDHkSC_kMk-A9B-2RH00HIFARv2M0UxuHAJDg7nEm6MK2NSF2DWZvc43W4PVejSr44IsMRhMigqs-ieUYk6mAqvrg_V_TI2rzJm8PMPnQpLos-PE&cce=2&category=acrcp_v1_32&sig=AOD64_1dmrVLjgP_cc82AunfL5sjXA_01Q&ctype=5&q=&nis=4&ved=2ahUKEwiQ7Ovc_LOXAxVy_7sIHa2xBXoQ5bgDKAB6BAgKEAs&adurl=" class="Buy-now">Buy now</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="strip-card">
+                <div class="strip-card-img-wrap">
+                    <img src="gnoce Engravable birthstone bouquet.jpg" alt="GNOCE Engravable Birthstone Bouquet">
+                </div>
+                <div class="strip-card-info">
+                    <h3>Engravable Birthstone Bouquet</h3>
+                    <div class="strip-card-meta">
+                        <span class="strip-card-price">R 1,567.00</span>
+                        <a href="https://www.google.com/aclk?sa=L&ai=DChsSEwjop8iG_bOXAxXwmYMHHXKuGewYACICCAEQDRoCZWY&co=1&ase=2&gclid=CjwKCAjwirLWBhBBEiwAlItbEka1W__-veuWPpMW6mxOPyMb9l43lyF8wAO6xkgpbnQBZg_5wwRdbRoCbGkQAvD_BwE&cid=CAASugHkaDFMYfPga_XYVPplLdC5gXGtuhtz_PlNpJE8cylbU4XqfJon-TvfSFX3T57fHtPygU52MQAzdmTZUhoWG7VDQyVKuwmGw9dtRFS9PU49EYclg8BHxI1fAqozsIxaQDF499Z5JvMw440cBim4DM9aSDEwwGAheTowmf2a9eubDpp_qWbyU8QVgAMWVdWW0_NXt-Jofn9ydXwh0aLulUhEPnTPoW3wJ-yqgJ2M3myUbfKIQ2a8K0s9u-0&cce=2&category=acrcp_v1_32&sig=AOD64_0BSkqBIwSa2etC7U7c_hv67wo4fQ&ctype=5&q=&nis=4&ved=2ahUKEwjJzsGG_bOXAxUVgf0HHZsQExMQ5bgDKAB6BAgMEAs&adurl=" class="Buy-now">Buy now</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 4 -->
+            <div class="strip-card">
+                <div class="strip-card-img-wrap">
+                    <img src="GNOCE ANCHOR HEART BAR NECKLACE.jpg" alt="GNOCE Anchor Heart Bar Necklace">
+                </div>
+                <div class="strip-card-info">
+                    <h3>Anchor Heart Bar Necklace</h3>
+                    <div class="strip-card-meta">
+                        <span class="strip-card-price">R 1,187.00</span>
+                        <a href="https://www.google.com/aclk?sa=L&ai=DChsSEwijq6_G_bOXAxXFkoMHHeEEJlUYACICCAEQCBoCZWY&co=1&ase=2&gclid=CjwKCAjwirLWBhBBEiwAlItbEjIAJ_1xoQtRqU--J6hnt8KYHqN-u4r5_hDq0DL8XYEQxOrPDU1edhoCRVoQAvD_BwE&cid=CAASugHkaNUmSVeBzMAe1jAJ9Q5yDVmUvm1LRR_mqC11AGqj-vWAW9Ts-bIATrb4-qBeM0TIJBKzeoHMVbLBPb7WBhJR_wnOdP61Fp4-3GDK0jkAL82VBwmKg0USThxYW-M_SF2r2VNTFAJOycNZiM6UV8OhP4rw9xz1PID6cboLb8bjPdTXAxBgkVQz_89wpQgxveBGbHJl5Dec2BZDnyycWmrZEhg3we5qFSw0MZ0d90ur9dczg9TrqUpwPFI&cce=2&category=acrcp_v1_32&sig=AOD64_2ece8P6vn1-w7GsUNJYB2gNF0ZXw&ctype=5&q=&nis=4&ved=2ahUKEwjp3KjG_bOXAxWfhP0HHciRJDwQ5bgDKAB6BAgMEAs&adurl=" class="Buy-now">Buy now</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 5 -->
+            <div class="strip-card">
+                <div class="strip-card-img-wrap">
+                    <img src="GNOCE Barbie pink Heart.jpg" alt="GNOCE Barbie Pink Heart Necklace">
+                </div>
+                <div class="strip-card-info">
+                    <h3>Barbie Pink Heart Necklace</h3>
+                    <div class="strip-card-meta">
+                        <span class="strip-card-price">R 1,450.00</span>
+                        <a href="https://www.google.com/aclk?sa=L&ai=DChsSEwjMl4j__bOXAxXXnYMHHdYFDlUYACICCAEQBRoCZWY&co=1&ase=2&gclid=CjwKCAjwirLWBhBBEiwAlItbEv2BllfryZZmnbRrxBu_usQyCXFl-vKGDNGoteM7Y5mJchhRCsrNJhoCdpMQAvD_BwE&cid=CAASugHkaJ7MGMXOmrY5CsQdmtVcm0TbiBDaUIKV5jmAlOh65inp1PqGgQEaNP7vYSLDoFFsXPUuRhHsT-GLDTXPPjaf0GcI3Hs-_VYUekG1AW1ZZ1YQaVJ_yiVlCtb8ddeGlurfIQJMdxZYcLYv1DlSINsfRhpMYGQ7DZzLrnp9n5D5GwQDakXD8uy_lEaqaBFgg6ZipN3Fode9PROjE4fQ4IdivkBUUvGlkx9WR6FPMr3AOEb-1jeKzLkzUcE&cce=2&category=acrcp_v1_32&sig=AOD64_2wS6DFI-1r65hQq5oUsPQog2vRhA&ctype=5&q=&nis=4&ved=2ahUKEwjchIH__bOXAxXOgv0HHc-8IIoQ5bgDKAB6BAgMEAs&adurl=" class="Buy-now">Buy now</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 6 -->
+			< section class="products">
+			<h2><b></b>Featured Products</h2></b>
+			
+			 <div class="product-grid">
+			
+            <div class="strip-card">
+                <div class="strip-card-img-wrap">
+                    <img src="C:\Users\PAICTA-NSF 055\Downloads\gnoce with you together.jpg" alt="Classic Silver Chain Necklace">
+                </div>
+                <div class="strip-card-info">
+                    <h3>gnoce with you together</h3>
+                    <div class="strip-card-meta">
+                        <span class="strip-card-price">R 1,644.00</span>
+                        <a href="https://www.google.com/aclk?sa=L&ai=DChsSEwjh2dao_rOXAxXuGQYAHSMSFtoYACICCAEQCBoCd3M&co=1&ase=2&gclid=CjwKCAjwirLWBhBBEiwAlItbEqHNXWbPf5joSGGQ8y-cbXK0NEv7e8dLUJG2StCiya4nug826UJVBxoCw28QAvD_BwE&cid=CAASugHkaKDwm_6StAJvddBgV5M7XQJp5tsZ7KCLC42h-fYedMV0yCBGOOGxSq6C9f5hdyYw80HHusiNmnNlbZuT7_5qqS4zlt_BBxR07JCX6SPf8BoZqgLdo5NoWbEQhcjklzBrrmJd6i5c_Q8dmpXZQU9Ee5ky9tCy_tZnwdEcvTsKWYlNNH0Ibig5FMYnn7kH8Qw2Y1eY2XIg7-MS35_w_9Drm7U5AlQEd7qEYlr0yqto-civiMqVgxXKtXk&cce=2&category=acrcp_v1_32&sig=AOD64_1ONlv3GzrlpmPa0aVzd64zy8aAxg&ctype=5&q=&nis=4&ved=2ahUKEwiewdCo_rOXAxXO_7sIHXNFARgQ5bgDKAB6BAgMEAs&adurl=" class="Buy-now">Buy now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>Â© 2026 GNOCE Jewelry. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>

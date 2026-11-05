@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GNOCE Jewelry – Home</title>
+    <meta name="description" content="Discover elegant necklaces and jewelry at GNOCE. Find the perfect piece to commemorate your sweetest memories.">
+    
+</video>
+
+<!-- Dark Overlay -->
+<div class="overlay"></div>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+	<!-- ══ FOOTER ══ -->
+    <footer>
+        <span class="footer-logo"><strong>GNOCE Jewelry</strong></span>
+        <ul class="footer-links">
+            <li><a href="about.html">about</a></li>
+            <li><a href="index.html">index</a></li>
+            <li><a href="product.html">product</a></li>
+            <li><a href="contacts.html">Contact</a></li>
+        </ul>
+    </footer>
+        /* ── Reset ── */
+        *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+
+        :root {
+            --gold: #c9a84c;
+            --gold-light: #e8c96d;
+            --gold-dim: rgba(201,168,76,0.22);
+            --dark: #080808;
+            --glass: rgba(255,255,255,0.06);
+            --glass-border: rgba(255,255,255,0.11);
+            --text: #f0ede8;
+            --muted: rgba(240,237,232,0.55);
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text);
+            background: var(--dark);
+            overflow-x: hidden;
+        }
+
+        /* ── Background Video ── */
+        .bg-video {
+            position: fixed; top:0; left:0;
+            width:100%; height:100%;
+            object-fit:cover; z-index:-2;
+        }
+        .overlay {
+            position: fixed; inset:0;
+            background: linear-gradient(135deg,rgba(0,0,0,0.78),rgba(0,0,0,0.48),rgba(0,0,0,0.78));
+            z-index:-1;
+        }
+
+        /* ── NAVBAR ── */
+        .navbar {
+            position:fixed; top:0; left:0; right:0; z-index:200;
+            display:flex; justify-content:space-between; align-items:center;
+            padding: 0 5%; height:68px;
+            background: rgba(8,8,8,0.5);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--glass-border);
+        }
+        .logo {
+            font-family:'Cormorant Garamond',serif;
+            font-size:1.6rem; font-weight:700;
+            letter-spacing:0.14em; color:var(--gold-light); text-transform:uppercase;
+        }
+        .nav-links { list-style:none; display:flex; gap:2rem; }
+        .nav-links a {
+            text-decoration:none; color:var(--text);
+            font-size:0.8rem; font-weight:500;
+            letter-spacing:0.1em; text-transform:uppercase;
+            position:relative; transition:color 0.25s;
+        }
+        .nav-links a::after {
+            content:''; position:absolute; left:0; bottom:-3px;
+            width:0; height:1.5px; background:var(--gold);
+            transition:width 0.3s ease;
+        }
+        .nav-links a:hover { color:var(--gold-light); }
+        .nav-links a:hover::after { width:100%; }
+
+        /* ═══════════════════════════════
+           1.  CINEMATIC HERO
+        ═══════════════════════════════ */
+        .hero {
+            position:relative; min-height:100vh;
+            display:flex; align-items:center;
+            padding: 100px 7% 60px;
+            overflow: hidden;
+        }
+
+        /* Large decorative image pinned to the right */
+        .hero-img-right {
+            position:absolute; right:-40px; top:0; bottom:0;
+            width:48%;
+            background: url('neck8.webp') center/cover no-repeat;
+            mask-image: linear-gradient(to right, transparent 0%, black 30%);
+            -webkit-mask-image: linear-gradient(to right, transparent 0%, black 30%);
+            opacity:0.55;
+        }
+
+        /* Small floating accent image */
+        .hero-float {
+            position:absolute; right: 10%; bottom: 12%;
+            width:160px; height:210px;
+            border-radius:120px;
+            overflow:hidden;
+            border:3px solid var(--gold);
+            box-shadow: 0 0 50px rgba(201,168,76,0.35);
+            animation: floatY 5s ease-in-out infinite;
+        }
+        .hero-float img { width:100%; height:100%; object-fit:cover; }
+
+        @keyframes floatY {
+            0%,100%{ transform: translateY(0); }
+            50%    { transform: translateY(-14px); }
+        }
+
+        .hero-content { max-width:580px; position:relative; z-index:2; }
+        .hero-badge {
+            display:inline-block; margin-bottom:22px;
+            background:var(--gold-dim); border:1px solid var(--gold);
+            color:var(--gold-light); font-size:0.7rem;
+            font-weight:600; letter-spacing:0.18em;
+            text-transform:uppercase; padding:6px 18px; border-radius:999px;
+            animation: fadeUp 0.8s ease both;
+        }
+        .hero h1 {
+            font-family:'Cormorant Garamond',serif;
+            font-size:clamp(3rem,6vw,5.8rem);
+            font-weight:700; line-height:1.05;
+            margin-bottom:22px;
+            animation: fadeUp 0.9s 0.1s ease both;
+        }
+        .hero h1 em { color:var(--gold-light); font-style:italic; }
+        .hero p {
+            font-size:1rem; line-height:1.8;
+            color:var(--muted); max-width:420px;
+            margin-bottom:36px;
+            animation: fadeUp 1s 0.2s ease both;
+        }
+        .hero-btns {
+            display:flex; gap:14px; flex-wrap:wrap;
+            animation: fadeUp 1s 0.3s ease both;
+        }
+        .btn-gold {
+            padding:13px 34px; background:var(--gold); color:#080808;
+            border-radius:999px; text-decoration:none;
+            font-size:0.85rem; font-weight:700; letter-spacing:0.06em;
+            transition: background 0.25s, transform 0.2s;
+        }
+        .btn-gold:hover { background:var(--gold-light); transform:translateY(-2px); }
+        .btn-ghost {
+            padding:13px 34px; background:transparent;
+            border:1.5px solid rgba(255,255,255,0.3); color:var(--text);
+            border-radius:999px; text-decoration:none;
+            font-size:0.85rem; font-weight:500; letter-spacing:0.06em;
+            transition: border-color 0.25s, color 0.25s, transform 0.2s;
+        }
+        .btn-ghost:hover { border-color:var(--gold); color:var(--gold-light); transform:translateY(-2px); }
+
+        .scroll-hint {
+            position:absolute; bottom:32px; left:50%;
+            transform:translateX(-50%);
+            display:flex; flex-direction:column; align-items:center; gap:6px;
+            color:var(--muted); font-size:0.68rem;
+            letter-spacing:0.18em; text-transform:uppercase;
+            animation: bounce 2.2s infinite;
+        }
+        .scroll-hint::after {
+            content:''; width:1.5px; height:34px;
+            background:linear-gradient(to bottom,var(--gold),transparent);
+        }
+
+        /* ═══════════════════════════════
+           2.  BENTO MOSAIC GRID
+        ═══════════════════════════════ */
+        .bento-section {
+            position:relative; z-index:1;
+            padding: 90px 5%;
+            background: rgba(0,0,0,0.82);
+            backdrop-filter: blur(4px);
+        }
+        .section-label {
+            text-align:center; display:block;
+            font-size:0.7rem; font-weight:600;
+            letter-spacing:0.22em; text-transform:uppercase;
+            color:var(--gold); margin-bottom:12px;
+        }
+        .section-title {
+            font-family:'Cormorant Garamond',serif;
+            font-size:clamp(2rem,4vw,3rem);
+            font-weight:700; text-align:center;
+            margin-bottom:8px;
+        }
+        .divider { width:50px; height:2px; background:var(--gold); margin:14px auto 42px; border-radius:999px; }
+
+        /* Bento grid — 4 col × variable rows */
+        .bento-grid {
+            display:grid;
+            grid-template-columns: repeat(4,1fr);
+            grid-auto-rows: 200px;
+            gap:14px;
+            max-width:1150px;
+            margin:0 auto;
+        }
+
+        .bento-cell {
+            border-radius:18px; overflow:hidden;
+            position:relative; cursor:pointer;
+            border:1px solid var(--glass-border);
+        }
+        .bento-cell img {
+            width:100%; height:100%; object-fit:cover;
+            transition: transform 0.5s ease;
+            display:block;
+        }
+        .bento-cell:hover img { transform:scale(1.08); }
+
+        /* Gold shimmer on hover */
+        .bento-cell::after {
+            content:''; position:absolute; inset:0;
+            background:linear-gradient(to top,rgba(201,168,76,0.45),transparent 55%);
+            opacity:0; transition:opacity 0.35s;
+        }
+        .bento-cell:hover::after { opacity:1; }
+
+        .bento-caption {
+            position:absolute; bottom:0; left:0; right:0; z-index:2;
+            padding:16px 18px;
+            background:linear-gradient(to top,rgba(0,0,0,0.8),transparent);
+            font-size:0.82rem; font-weight:600; letter-spacing:0.04em;
+            transform:translateY(8px); opacity:0;
+            transition:opacity 0.3s, transform 0.3s;
+        }
+        .bento-cell:hover .bento-caption { opacity:1; transform:translateY(0); }
+
+        /* Span classes */
+        .span-2c { grid-column: span 2; }
+        .span-2r { grid-row: span 2; }
+        .span-2c-2r { grid-column: span 2; grid-row: span 2; }
+
+        /* ═══════════════════════════════
+           3.  EDITORIAL SPLIT — necklace story
+        ═══════════════════════════════ */
+        .editorial {
+            position:relative; z-index:1;
+            display:grid;
+            grid-template-columns: 1fr 1fr;
+            min-height:550px;
+        }
+
+        .editorial-img {
+            position:relative; overflow:hidden;
+        }
+        .editorial-img img {
+            width:100%; height:100%; object-fit:cover;
+            transition: transform 6s ease;
+        }
+        .editorial-img:hover img { transform:scale(1.06); }
+
+        /* Two overlapping accent thumbnails */
+        .editorial-thumb {
+            position:absolute; border-radius:14px; overflow:hidden;
+            border:3px solid #080808;
+            box-shadow:0 16px 40px rgba(0,0,0,0.6);
+        }
+        .editorial-thumb img { width:100%; height:100%; object-fit:cover; display:block; }
+        .thumb-a { width:130px; height:170px; right:24px; top:50px; }
+        .thumb-b { width:100px; height:130px; right:80px; bottom:50px; }
+
+        .editorial-text {
+            background: rgba(0,0,0,0.85);
+            display:flex; flex-direction:column; justify-content:center;
+            padding: 70px 8%;
+        }
+        .editorial-text .section-label { text-align:left; margin-bottom:16px; }
+        .editorial-text h2 {
+            font-family:'Cormorant Garamond',serif;
+            font-size:clamp(2rem,3.5vw,2.8rem);
+            font-weight:700; margin-bottom:20px; line-height:1.2;
+        }
+        .editorial-text p {
+            font-size:0.95rem; line-height:1.8; color:var(--muted);
+            margin-bottom:32px; max-width:420px;
+        }
+
+        /* ═══════════════════════════════
+           4.  HORIZONTAL SCROLL STRIP
+        ═══════════════════════════════ */
+        .scroll-strip-section {
+            position:relative; z-index:1;
+            padding: 80px 0;
+            background: rgba(10,10,10,0.9);
+            overflow:hidden;
+        }
+        .scroll-strip-section .section-label,
+        .scroll-strip-section .section-title,
+        .scroll-strip-section .divider { padding:0 5%; }
+        .scroll-strip-section .section-title { text-align:left; }
+        .scroll-strip-section .divider { margin-left:5%; margin-right:auto; }
+
+        .strip-track {
+            display:flex; gap:18px;
+            padding: 30px 5%;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width:none;
+        }
+        .strip-track::-webkit-scrollbar { display:none; }
+
+        .strip-card {
+            flex: 0 0 260px;
+            height: 340px;
+            border-radius:20px; overflow:hidden;
+            position:relative; scroll-snap-align:start;
+            border:1px solid var(--glass-border);
+            transition:transform 0.3s;
+        }
+        .strip-card:hover { transform:scale(1.03); }
+        .strip-card img { width:100%; height:100%; object-fit:cover; }
+        .strip-card-label {
+            position:absolute; bottom:0; left:0; right:0;
+            padding:20px 18px 16px;
+            background:linear-gradient(to top,rgba(0,0,0,0.85),transparent);
+            font-family:'Cormorant Garamond',serif;
+            font-size:1.15rem; font-weight:600;
+            letter-spacing:0.03em;
+        }
+        .strip-price {
+            display:block; font-family:'Inter',sans-serif;
+            font-size:0.8rem; color:var(--gold-light);
+            margin-top:2px; letter-spacing:0.08em;
+        }
+
+        /* ═══════════════════════════════
+           5.  RINGS FEATURE SECTION
+        ═══════════════════════════════ */
+        .rings-section {
+            position:relative; z-index:1;
+            padding: 90px 5%;
+            background: rgba(255,255,255,0.97);
+            color:#111;
+        }
+        .rings-section .section-label { color:var(--gold); }
+        .rings-section .section-title { color:#111; }
+        .rings-section .divider { background:var(--gold); }
+
+        .rings-grid {
+            display:grid;
+            grid-template-columns: repeat(3,1fr);
+            gap:24px;
+            max-width:1000px; margin:0 auto;
+        }
+
+        .ring-card {
+            position:relative; border-radius:999px 999px 20px 20px;
+            overflow:hidden; background:#f5f5f5;
+            transition:transform 0.35s, box-shadow 0.35s;
+        }
+        .ring-card:hover {
+            transform:translateY(-10px);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.18);
+        }
+        .ring-card img { width:100%; height:360px; object-fit:cover; display:block; }
+        .ring-card-info {
+            padding: 20px;
+            text-align:center;
+        }
+        .ring-card-info h3 {
+            font-family:'Cormorant Garamond',serif;
+            font-size:1.3rem; font-weight:700;
+            color:#111; margin-bottom:4px;
+        }
+        .ring-card-info .tag {
+            font-size:0.75rem; font-weight:600;
+            letter-spacing:0.1em; text-transform:uppercase;
+            color:var(--gold);
+        }
+
+        /* Center ring — taller, more prominent */
+        .ring-card.featured {
+            grid-row: span 1;
+            transform: translateY(-20px);
+            border:3px solid var(--gold);
+        }
+        .ring-card.featured:hover { transform:translateY(-30px); }
+        .ring-card.featured img { height:420px; }
+
+        /* ═══════════════════════════════
+           6.  FULL-BLEED BANNER
+        ═══════════════════════════════ */
+        .banner {
+            position:relative; z-index:1;
+            height:420px; overflow:hidden;
+            display:flex; align-items:center; justify-content:center;
+        }
+        .banner img {
+            position:absolute; inset:0;
+            width:100%; height:100%; object-fit:cover;
+            filter:brightness(0.4);
+        }
+        .banner-content {
+            position:relative; z-index:2;
+            text-align:center;
+            padding:0 20px;
+        }
+        .banner-content h2 {
+            font-family:'Cormorant Garamond',serif;
+            font-size:clamp(2.2rem,5vw,4rem);
+            font-weight:700; margin-bottom:16px;
+            letter-spacing:0.04em;
+        }
+        .banner-content p {
+            color:var(--muted); font-size:1rem;
+            margin-bottom:28px; max-width:500px; margin-left:auto; margin-right:auto;
+        }
+
+        /* ═══════════════════════════════
+           FOOTER
+        ═══════════════════════════════ */
+        footer {
+            position:relative; z-index:1;
+            background:#030303;
+            border-top:1px solid var(--glass-border);
+            padding:30px 5%;
+            display:flex; justify-content:space-between;
+            align-items:center; flex-wrap:wrap; gap:14px;
+        }
+        .footer-logo {
+            font-family:'Cormorant Garamond',serif;
+            font-size:1.25rem; font-weight:700;
+            color:var(--gold-light); letter-spacing:0.12em;
+        }
+        .footer-links { display:flex; gap:1.6rem; list-style:none; }
+        .footer-links a {
+            color:var(--muted); text-decoration:none;
+            font-size:0.78rem; letter-spacing:0.07em;
+            transition:color 0.25s;
+        }
+        .footer-links a:hover { color:var(--gold-light); }
+        .footer-copy { color:var(--muted); font-size:0.76rem; }
+
+        /* ── Animations ── */
+        @keyframes fadeUp {
+            from{ opacity:0; transform:translateY(24px); }
+            to  { opacity:1; transform:translateY(0); }
+        }
+        @keyframes bounce {
+            0%,100%{ transform:translateX(-50%) translateY(0); }
+            50%    { transform:translateX(-50%) translateY(9px); }
+        }
+
+        /* ── Responsive ── */
+        @media(max-width:900px){
+            .hero-img-right,.hero-float{ display:none; }
+            .editorial{ grid-template-columns:1fr; }
+            .editorial-img{ height:340px; }
+            .bento-grid{ grid-template-columns:repeat(2,1fr); }
+            .span-2c,.span-2c-2r{ grid-column:span 2; }
+            .rings-grid{ grid-template-columns:1fr 1fr; }
+            .ring-card.featured{ grid-column:span 2; transform:none; }
+        }
+        @media(max-width:560px){
+            .nav-links{ display:none; }
+            .bento-grid{ grid-template-columns:1fr; }
+            .span-2c,.span-2c-2r,.span-2r{ grid-column:span 1; grid-row:span 1; }
+            .rings-grid{ grid-template-columns:1fr; }
+            .ring-card.featured{ grid-column:span 1; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Background Video -->
+    <video autoplay muted loop playsinline class="bg-video">
+        <source src="https://pin.it/5m5SDHMJi" type="video/mp4">
+    </video>
+    <div class="overlay"></div>
+
+    <!-- ══ NAVBAR ══ -->
+    <nav class="navbar">
+        <h1 class="logo">GNOCE</h1>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contacts.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- ══ 1. CINEMATIC HERO ══ -->
+    <section class="hero">
+        <!-- Large decorative image on the right -->
+        <div class="hero-img-right"></div>
+
+        <!-- Floating pill image -->
+        <div class="hero-float">
+            <img src="neck1.jpg" alt="Featured Necklace">
+        </div>
+
+        <div class="hero-content">
+            <div class="hero-badge">✦ Est. 2015 — Handcrafted Jewelry</div>
+            <h1>Wear Your <em>Story</em>,<br>Cherish the Moment.</h1>
+            <p>
+                GNOCE creates beautiful, customisable necklaces crafted
+                to celebrate life's most meaningful memories.
+            </p>
+			
+			<div class="hero-btns">
+                <a href="products.html" class="btn-gold">Shop Collection</a>
+                <a href="about.html" class="btn-ghost">Our Story</a>
+            </div>
+
+        </div>
+        <div class="scroll-hint">Scroll</div>
+    </section>
+
+    <!-- ══ 2. BENTO MOSAIC GRID ══ -->
+    <section class="bento-section">
+        <span class="section-label">✦ Our Collection</span>
+        <h2 class="section-title">Crafted for Every Moment</h2>
+        <div class="divider"></div>
+
+        <div class="bento-grid">
+
+            <!-- Large hero cell (2col × 2row) -->
+            <div class="bento-cell span-2c-2r">
+                <img src="neck8.webp" alt="Signature Necklace">
+                <div class="bento-caption">Signature Collection — The Statement Piece</div>
+            </div>
+
+            <!-- Tall cell (1col × 2row) -->
+            <div class="bento-cell span-2r">
+                <img src="neck7.webp" alt="Layered Necklace">
+                <div class="bento-caption">Layered Elegance</div>
+            </div>
+
+            <!-- Small top-right -->
+            <div class="bento-cell">
+                <img src="neck2.jpg" alt="Gold Necklace">
+                <div class="bento-caption">Gold Collection</div>
+            </div>
+
+            <!-- Small bottom-right -->
+            <div class="bento-cell">
+                <img src="neck4.jpg" alt="Classic Necklace">
+                <div class="bento-caption">Classic Silver</div>
+            </div>
+
+            <!-- Wide bottom cell (2col) -->
+            <div class="bento-cell span-2c">
+                <img src="shopping (3.webp" alt="Store Experience">
+                <div class="bento-caption"> Come Visit Us</div>
+            </div>
+
+            <div class="bento-cell">
+                <img src="neck5.jpg" alt="Pendant Necklace">
+                <div class="bento-caption">Pendant Series</div>
+            </div>
+
+            <div class="bento-cell">
+                <img src="neck6.jpg" alt="Diamond Necklace">
+                <div class="bento-caption">Diamante Line</div>
+            </div>
+			
+			<div class="bento-cell">
+                <img src="nck2.jpg" alt="Diamond Necklace">
+                <div class="bento-caption">classic gold</div>
+            </div>
+			
+			<div class="bento-cell">
+                <img src="neck10.jpg" alt="gold Necklace">
+                <div class="bento-caption"> gold</div>
+            </div>
+			
+            <div class="bento-cell">
+                <img src="nck1.jpg" alt="silver Necklace">
+                <div class="bento-caption"> silver</div>
+            </div>
+			
+			<div class="bento-cell">
+                <img src="nck3.webp" alt="silver Necklace">
+                <div class="bento-caption"> silver</div>
+            </div>
+
+
+        </div>
+    </section>
+
+    <!-- ══ 3. EDITORIAL SPLIT ══ -->
+    <section class="editorial">
+        <!-- Left: stacked images with floating thumbnails -->
+        <div class="editorial-img">
+            <img src="neck6.jpg" alt="Jewelry Lifestyle">
+
+            <!-- Floating accent thumbnails overlapping -->
+            <div class="editorial-thumb thumb-a">
+                <img src="neck1.jpg" alt="Detail shot">
+            </div>
+            <div class="editorial-thumb thumb-b">
+                <img src="download (1).webp" alt="Gold accent">
+            </div>
+        </div>
+
+        <!-- Right: editorial text -->
+        <div class="editorial-text">
+            <span class="section-label">✦ Our Philosophy</span>
+            <h2>Where Knowledge<br>Meets <em style="color:var(--gold-light);font-style:italic;">Sweetness</em></h2>
+            <p>
+                Gnosis means knowledge and memory. Dolce represents sweetness and softness.
+                Together, GNOCE is where you shop for beautiful jewelry pieces
+                that commemorate your sweetest memories.
+            </p>
+            <p>
+                Founded in 2015, every piece is designed to be fun, personal,
+                and crafted to celebrate life's greatest moments.
+            </p>
+            <a href="about.html" class="btn-gold" style="width:fit-content;">Learn Our Story</a>
+        </div>
+    </section>
+	<div class="bento-cell">
+                <img src="neck4.jpg" alt="Classic Necklace">
+                <div class="bento-caption">Classic Silver</div>
+            </div>
+
+
+    <!-- ══ 4. HORIZONTAL SCROLL STRIP — Necklaces ══ -->
+    <section class="scroll-strip-section">
+        <span class="section-label" style="display:block;padding:0 5%;margin-bottom:8px;">✦ Browse the Range</span>
+        <h2 class="section-title">Necklace Collection</h2>
+        <div class="divider"></div>
+
+
+            <div class="product-card">
+                <img src="Gnoce Harry Potter Hufflepuff Badger Necklace.jpg" alt="Necklace 1">
+                <div class="product-info">
+                    <h2>Bar &amp; Ball Layered</h2>
+                    <div class="price">From R 1,644.00</div>
+					<a href="https://www.google.com/aclk?sa=L&ai=DChsSEwjq5b_LsayWAxU3j1AGHSWlAvMYACICCAEQBhoCZGc&co=1&ase=2&gclid=CjwKCAjwqJXUBhBNEiwA8BgG7gXu_7a2qKTtlVY6intBudfDmwHSVu5qCS1HaytA7vaGLFdwd1MWrxoCPgYQAvD_BwE&cid=CAASuwHkaFssTjNlR40trkifXjGiU2S3875cf4X-Ttd5jyY5lQdbduA9PWmFK4ZdbdvUV7drzwkoPoTD7SXNv39sRmadMX3OLYGnvL2FIicBKLOsUGysJMFhJhOG1i76YRmh9dKsOxubyUuf4xmIxWk4Wji1DJz5pifKbJCmYtkGJBDssaF40Ue5UWL49OpZfZxI9TCjGhoYrELCy0Tf6LIyH-EuMVapTc2jU88xyo48TnVTvsD_-_VymKvuTe-K&cce=2&category=acrcp_v1_32&sig=AOD64_3Ogw2QJJvpnBK-Pz4MfvxSMZsV0w&ctype=5&q=&nis=4&ved=2ahUKEwj0sLjLsayWAxUnQEEAHbn2JnMQ5bgDKAB6BAgHEAs&adurl=" class="Buy-now">Buy now</a>
+                </div>
+				<div class="product-card">
+                <img src="Gnoce Name Personalized Birth Flower Birthstone Oval Pendant Necklace.jpg" alt="Necklace 2">
+                <div class="product-info">
+				<h2>Sammy gold</h2>
+                    <div class="price">From R 1,229.00</div>
+					<a href="https://www.google.com/aclk?sa=L&ai=DChsSEwjx4sa4tKyWAxVOklAGHV7fNdQYACICCAEQBhoCZGc&co=1&ase=2&gclid="=" class="Buy-now">Buy now</a>
+                </div>
+				<div class="product-card">
+                <img src="Gnoce Bee Birthstone Charm Platinum-plated silver Blend.jpg" alt="Necklace 1">
+                <div class="product-info">
+                    <h2>Diamante Heart</h2>
+                    <div class="price">From R 1,567.00</div>
+					<a href="https://www.google.com/aclk?sa=L&ai=DChsSEwjejYiPn7GWAxUSmVAGHa--GZcYACICCAEQCRoCZGc&co=1&ase=2&gclid=CjwKCAjw7p_UBhBlEiwAhpIs72ok3HMEItAiVlPrzQFQEXBlM3MX6jqJT_wuDM-aOPiwprOEz_mdsxoC-ZQQAvD_BwE&cid=CAASuwHkaDoraL5REOt4fQtYbDgn0JpYx3Hml8cprAedIb5Pixx6OrN5x8BHfjlycjeIn3Bb2gY67kcOAH6n9A0VIK0bLhSIhEv4FJ2_MwAQMlzpdNfNgviLSrRDw-vewk7izBfOEjxwZfeJdjVmoddD_mTy-WntV0QPnRB5alcWs0aWc9GrPItk3D0jGqsryMXKMR9-lK81zdhZttAjt6kDWRQeLtSSoNnzSARfjFgszPYVgXCu-raZiPuurdne&cce=2&category=acrcp_v1_32&sig=AOD64_3C_l91NJqXSk0VMik4FX5NjxtVbw&ctype=5&q=&nis=4&ved=2ahUKEwjfhYGPn7GWAxVZRkEAHdfQOBEQ5bgDKAB6BAgKEAs&adurl==" class="Buy-now">Buy now</a>
+                </div>
+				<div class="product-card">
+                <img src="Gnoce Custom Couple Necklace Photo Pendant.jpg" alt="Necklace 1">
+                <div class="product-info">
+                    <h2>Gemstone Pendant</h2>
+                    <div class="price">From R 1,187.00</div>
+					<a href="https://www.google.com/aclk?sa=L&ai=DChsSEwisp9bforGWAxUZjFAGHUAlDTUYACICCAEQBxoCZGc&co=1&ase=2&gclid=CjwKCAjw7p_UBhBlEiwAhpIs7xuCipRUhT9JGST-j5SdMsjb47m-bNKjN6W8OFHJ_WvQsOFcAGeowhoCeuEQAvD_BwE&cid=CAASuwHkaAZE0Xt7npXJ_xNSbk-uq0hKBjF0yedSUaAWoMQfA8o10KrE0lRTGk3g7PhKiGQK97NQmWuAQP5NiaJOGkbRv5gZnNMVnZRtDXU8hka_dDqVqXdjevDdxBsQ-y3DLOSVGwYF_nIPmGnEi6zZT6Wxd3OQJlXaQz9SP6DgQY2Gkec3VdgcoLQ7SLR0zzkjvyRqWEs_jbC2IeBhTk7Oe9vvJME7kPc53e_cHW3HWNoO86sz3KuVWp-TAh2C&cce=2&category=acrcp_v1_32&sig=AOD64_2pkYcjLazST6pNCwjRkrEkGclonA&ctype=5&q=&nis=4&ved=2ahUKEwiPvM7forGWAxWxT0EAHUmeLyoQ5bgDKAB6BAgNEAs&adurl==" class="Buy-now">Buy now</a>
+                </div>
+				<div class="product-card">
+                <img src="Gnoce Projection Love Heart Personalized Photo Necklace" alt="Necklace 1">
+                <div class="product-info">
+                    <h2>Classic Silver Chain</h2>
+                    <div class="price">From R 1,644.00</div>
+					<a href="https://www.google.com/aclk?sa=L&ai=DChsSEwjc7OLen7GWAxX2olAGHSTUMqQYACICCAEQCBoCZGc&co=1&ase=2&gclid=CjwKCAjw7p_UBhBlEiwAhpIs79tcM2xGWcLwI1qUysh1DYZJX8KlPH5Zsl8Zg2q0XmoofFwUqtG1oRoCYeEQAvD_BwE&cid=CAASuwHkaDzv5j6y3CEvUYqxCStwyRqMAIImloCgtu3R-5wAOkm3IZdF875t-hwt7lDzv4dWwk-5dXV-4QbB8yqXzHqxJzxjFVmWN5KZs5TowKBph5W7yj1y5juXvIkB99jUBTKnyKn-F_OKHgbffrv0Qk3zdqjLgalsllnf5yZ_JX3y0kRCw69ucVw0S6b8CQvmcvvvzzvo9CNMUQLaDVW-C_aptViqrDGnqvZ5Tf7Hflgz_paayREEauqh-9cC&cce=2&category=acrcp_v1_32&sig=AOD64_3QFXRzrgo1NMzVVibuJVohEXGTDQ&ctype=5&q=&nis=4&ved=2ahUKEwiw3tven7GWAxVsTkEAHZPgI8wQ5bgDKAB6BAgIEAs&adurl=" class="Buy-now">Buy now</a>
+                </div>
+			
+
+    </section>
+
+    <!-- ══ 5. RINGS FEATURE — pill-shaped cards on white bg ══ -->
+    <section class="rings-section">
+        <span class="section-label">✦ Also Available</span>
+        <h2 class="section-title" style="color:#111;">Fine Ring Collection</h2>
+        <div class="divider"></div>
+
+        <div class="rings-grid">
+            <div class="ring-card">
+                <img src="ring1.jpg" alt="Ring 1">
+                <div class="ring-card-info">
+                    <div class="tag">Sterling Silver</div>
+                    <h3>Classic Band Ring</h3>
+					<div class="price">from R1,493.00
+					<a href="https://www.google.com/aclk?sa=L&ai=DChsSEwjB_KuXpbGWAxXUj1AGHfP4KYEYACICCAEQFxoCZGc&co=1&ase=2&gclid=CjwKCAjw7p_UBhBlEiwAhpIs79l9Gfr3vLhS6BZHzFURBiD4i2ehlTnbupXw9H0HeCGvLkK4qEyK-RoC7REQAvD_BwE&cid=CAASuwHkaBcjB5FDzWcN44A-6H6jk7L6OT1vC3NPt6j0itHgzWghP0kazCOC7fcM5kIxPp3F2zV6NUJyxy4D_qU01TgjIjOFJFPzXHM47UT9-Eg70sHhjop71ZlMYF6keTuvjihf-NbmfPMyDH1RRQm5Z25NhPt41rpt70wdSYIauqDMeGwCY01x_XFHEPwe-4WV6mbpuypXhDgHBj4fXzduR7iYGz6R9AMLX2bVXO6Q9irIZ9xrPwCDMpk7AFHS&cce=2&category=acrcp_v1_32&sig=AOD64_3G7E-IG1UeiccpAjkjPWbOGPjdZQ&ctype=5&q=&nis=4&ved=2ahUKEwjrnqaXpbGWAxWnQUEAHWCEGEsQ5bgDKAB6BAgGEAs&adurl=class"="Buy-now">Buy now</a>
+                </div>
+            </div>
+
+            <!-- Center featured ring -->
+            <div class="ring-card featured">
+                <img src="ring3.webp" alt="Featured Ring">
+                <div class="ring-card-info">
+                    <div class="tag">⭐ Best Seller</div>
+                    <h3>Gold Statement Ring</h3>
+					<div class="price">from R1,520.00
+					<a href="https://www.google.com/aclk?sa=L&ai=DChsSEwjB_KuXpbGWAxXUj1AGHfP4KYEYACICCAEQExoCZGc&co=1&ase=2&gclid=CjwKCAjw7p_UBhBlEiwAhpIs7385jC_wxRp3_B_up5cE0y_pIeWcshqXypG8BbVTd8d5JS4huWgkwxoCfAEQAvD_BwE&cid=CAASuwHkaBcjB5FDzWcN44A-6H6jk7L6OT1vC3NPt6j0itHgzWghP0kazCOC7fcM5kIxPp3F2zV6NUJyxy4D_qU01TgjIjOFJFPzXHM47UT9-Eg70sHhjop71ZlMYF6keTuvjihf-NbmfPMyDH1RRQm5Z25NhPt41rpt70wdSYIauqDMeGwCY01x_XFHEPwe-4WV6mbpuypXhDgHBj4fXzduR7iYGz6R9AMLX2bVXO6Q9irIZ9xrPwCDMpk7AFHS&cce=2&category=acrcp_v1_32&sig=AOD64_1DeN4pQH9BXOkpJSnMHcnN-nWLvw&ctype=5&q=&nis=4&ved=2ahUKEwjrnqaXpbGWAxWnQUEAHWCEGEsQ5bgDKAB6BAgGEB8&adurl="class="Buy-now">Buy now</a>
+                </div>
+            </div>
+
+            <div class="ring-card">
+                <img src="ring2.jpg" alt="Ring 2">
+                <div class="ring-card-info">
+                    <div class="tag">Rose gold</div>
+					<div class="price">from R1,544.00
+					<a href="https://www.google.com/aclk?sa=L&ai=DChsSEwjB_KuXpbGWAxXUj1AGHfP4KYEYACICCAEQEhoCZGc&co=1&ase=2&gclid=CjwKCAjw7p_UBhBlEiwAhpIs74PWgPL4X3Cuk31whubgzhdnhZh8hrOgM2hpg7DhAIcAK7BN-b55LBoCA6wQAvD_BwE&cid=CAASuwHkaBcjB5FDzWcN44A-6H6jk7L6OT1vC3NPt6j0itHgzWghP0kazCOC7fcM5kIxPp3F2zV6NUJyxy4D_qU01TgjIjOFJFPzXHM47UT9-Eg70sHhjop71ZlMYF6keTuvjihf-NbmfPMyDH1RRQm5Z25NhPt41rpt70wdSYIauqDMeGwCY01x_XFHEPwe-4WV6mbpuypXhDgHBj4fXzduR7iYGz6R9AMLX2bVXO6Q9irIZ9xrPwCDMpk7AFHS&cce=2&category=acrcp_v1_32&sig=AOD64_1nEuClwrEpgx3iwnTyq4-uLm6upg&ctype=5&q=&nis=4&ved=2ahUKEwjrnqaXpbGWAxWnQUEAHWCEGEsQ5bgDKAB6BAgGEDo&adurl="class="Buy-now">Buy now</a>
+                    <h3>Twisted Band Ring</h3>
+                </div>
+				
+				 <div class="ring-card">
+                <img src="rings4.jpg" alt="Ring 2">
+                <div class="ring-card-info">
+                    <div class="tag"> coffin Gold</div>
+                    <h3> Band Ring</h3>
+					<div class="price">from R1,393.00
+					<a href="https://www.google.com/aclk?sa=L&ai=DChsSEwjB_KuXpbGWAxXUj1AGHfP4KYEYACICCAEQDxoCZGc&co=1&ase=2&gclid=CjwKCAjw7p_UBhBlEiwAhpIs70uU89sJoJXEXMpXzAqIs85FOpZWJ33tL6p94AhNH68cd2hmjEEMHxoCq_4QAvD_BwE&cid=CAASuwHkaBcjB5FDzWcN44A-6H6jk7L6OT1vC3NPt6j0itHgzWghP0kazCOC7fcM5kIxPp3F2zV6NUJyxy4D_qU01TgjIjOFJFPzXHM47UT9-Eg70sHhjop71ZlMYF6keTuvjihf-NbmfPMyDH1RRQm5Z25NhPt41rpt70wdSYIauqDMeGwCY01x_XFHEPwe-4WV6mbpuypXhDgHBj4fXzduR7iYGz6R9AMLX2bVXO6Q9irIZ9xrPwCDMpk7AFHS&cce=2&category=acrcp_v1_32&sig=AOD64_0bqmIL8GWXukgyPn-8e6QonL8EaA&ctype=5&q=&nis=4&ved=2ahUKEwjrnqaXpbGWAxWnQUEAHWCEGEsQ5bgDKAB6BAgGECM&adurl="class="Buy-now">Buy now</a>
+                </div>
+				
+				<div class="ring-card featured">
+                <img src="ring5.png" alt="Featured Ring">
+                <div class="ring-card-info">
+                    <div class="tag">⭐ Best Seller</div>
+					<div class="price">from R499,48.00
+					<a href="https://www.google.com/aclk?sa=L&ai=DChsSEwjB_KuXpbGWAxXUj1AGHfP4KYEYACICCAEQDRoCZGc&co=1&ase=2&gclid=CjwKCAjw7p_UBhBlEiwAhpIs7zCVbEh8DZTnbjWQThkL7hx1f1D51dvOQtYVt4w2xC-WNpgxd90EXBoC70oQAvD_BwE&cid=CAASuwHkaBcjB5FDzWcN44A-6H6jk7L6OT1vC3NPt6j0itHgzWghP0kazCOC7fcM5kIxPp3F2zV6NUJyxy4D_qU01TgjIjOFJFPzXHM47UT9-Eg70sHhjop71ZlMYF6keTuvjihf-NbmfPMyDH1RRQm5Z25NhPt41rpt70wdSYIauqDMeGwCY01x_XFHEPwe-4WV6mbpuypXhDgHBj4fXzduR7iYGz6R9AMLX2bVXO6Q9irIZ9xrPwCDMpk7AFHS&cce=2&category=acrcp_v1_32&sig=AOD64_0n794xT6S5fhantANoSuzM2xqdNA&ctype=5&q=&nis=4&ved=2ahUKEwjrnqaXpbGWAxWnQUEAHWCEGEsQ5bgDKAB6BAgGEBc&adurl="class="Buy-now">Buy now</a>
+                    <h3>Gold Statement Rin
+            </div>
+        </div>
+    </section>
+
+    <!-- ══ 6. FULL-BLEED CALL-TO-ACTION BANNER ══ -->
+    <div class="banner">
+        <img src="bgimage.jpg" alt="Jewelry Banner">
+        <div class="banner-content">
+            <h2>Find Your Perfect Piece</h2>
+            <p>Explore our full range of handcrafted necklaces, rings, and accessories — made to tell your story.</p>
+            <a href="products.html" class="btn-gold">Shop All Products &rarr;</a>
+        </div>
+    </div>
+
+    <!-- ══ FOOTER ══ -->
+    <footer>
+        <span class="footer-logo"><strong>GNOCE Jewelry</strong></span>
+        <ul class="footer-links">
+            <li><a href="about.html">about</a></li>
+            <li><a href="index.html">index</a></li>
+            <li><a href="product.html">product</a></li>
+            <li><a href="contacts.html">Contact</a></li>
+        </ul>
+        <span class="footer-copy">© 2026 GNOCE JEWELRY BY OYAMA MATAMO</span>
+    </footer>
+
+</body>
+</html>
