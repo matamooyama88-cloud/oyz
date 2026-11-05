@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frequently Asked Questions — GNOCE Jewelry</title>
+    <meta name="description" content="Answers to common questions about GNOCE Jewelry orders, shipping, ring sizing, materials, and returns.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --gold: #c9a24b;
+            --gold-light: #e8d9b5;
+            --ink: #000000;
+            --ink-soft: #d9d9d9;
+            --paper: #161616;
+            --cream: #0a0a0a;
+            --line: #2b2b2b;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: var(--ink);
+            color: var(--ink-soft);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .announce {
+            background: linear-gradient(90deg, #8b6f28, var(--gold), #8b6f28);
+            color: #000;
+            font-size: 12px;
+            font-weight: 600;
+            text-align: center;
+            padding: 7px 12px;
+            letter-spacing: 0.04em;
+        }
+
+        /* Navbar */
+        nav {
+            background: rgba(0, 0, 0, 0.92);
+            border-bottom: 1px solid var(--line);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 50px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(8px);
+        }
+
+        nav h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 28px;
+            color: var(--gold);
+            font-weight: 700;
+            letter-spacing: 0.06em;
+        }
+
+        nav h1 span {
+            color: #fff;
+            font-size: 18px;
+            font-weight: 400;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 24px;
+            align-items: center;
+        }
+
+        nav ul li a {
+            color: var(--ink-soft);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.25s;
+            padding: 4px 0;
+            border-bottom: 2px solid transparent;
+        }
+
+        nav ul li a:hover,
+        nav ul li a.active {
+            color: var(--gold);
+            border-color: var(--gold);
+        }
+
+        /* Header banner */
+        .page-banner {
+            text-align: center;
+            padding: 60px 20px 40px;
+        }
+
+        .page-banner .eyebrow {
+            display: inline-block;
+            font-size: 12px;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 12px;
+        }
+
+        .page-banner h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 42px;
+            color: #ffffff;
+            font-weight: 600;
+        }
+
+        .page-banner .rule {
+            width: 60px;
+            height: 2px;
+            background: var(--gold);
+            margin: 16px auto 18px;
+        }
+
+        .page-banner p {
+            max-width: 540px;
+            margin: 0 auto;
+            font-size: 14.5px;
+            color: #d0d0d0;
+            line-height: 1.6;
+        }
+
+        /* FAQ Content Container */
+        .faq-wrap {
+            max-width: 860px;
+            width: 100%;
+            margin: 0 auto 80px;
+            padding: 0 25px;
+            flex-grow: 1;
+        }
+
+        .faq-category {
+            margin-bottom: 35px;
+        }
+
+        .faq-category h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 24px;
+            color: var(--gold);
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--line);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .faq-category h3 i {
+            font-size: 18px;
+            color: var(--gold);
+        }
+
+        .faq-item {
+            background: var(--paper);
+            border: 1px solid var(--line);
+            border-radius: 6px;
+            margin-bottom: 14px;
+            overflow: hidden;
+            transition: border-color 0.3s;
+        }
+
+        .faq-item:hover {
+            border-color: rgba(201, 162, 75, 0.5);
+        }
+
+        .faq-question {
+            padding: 18px 22px;
+            font-size: 15px;
+            font-weight: 500;
+            color: #ffffff;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+            transition: background 0.25s, color 0.25s;
+        }
+
+        .faq-question:hover {
+            background: rgba(255, 255, 255, 0.03);
+            color: var(--gold-light);
+        }
+
+        .faq-question i {
+            color: var(--gold);
+            transition: transform 0.3s ease;
+            font-size: 13px;
+        }
+
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.35s ease, padding 0.35s ease;
+            background: var(--cream);
+            color: #cccccc;
+            font-size: 14px;
+            line-height: 1.7;
+            padding: 0 22px;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 300px;
+            padding: 16px 22px 20px;
+            border-top: 1px solid var(--line);
+        }
+
+        .faq-contact-card {
+            background: linear-gradient(135deg, #1b160c 0%, #0d0d0d 100%);
+            border: 1px solid var(--gold);
+            border-radius: 8px;
+            padding: 35px 25px;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .faq-contact-card h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 26px;
+            color: var(--gold);
+            margin-bottom: 10px;
+        }
+
+        .faq-contact-card p {
+            color: #e0e0e0;
+            font-size: 14px;
+            max-width: 500px;
+            margin: 0 auto 20px;
+        }
+
+        .btn-gold {
+            display: inline-block;
+            padding: 12px 30px;
+            background: var(--gold);
+            color: #000;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            border-radius: 3px;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        .btn-gold:hover {
+            background: var(--gold-light);
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--ink);
+            color: #ffffff;
+            padding: 50px 50px 25px;
+            border-top: 1px solid var(--line);
+        }
+
+        .footer-grid {
+            max-width: 1300px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 30px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-grid h5 {
+            color: var(--gold);
+            font-size: 13px;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+        }
+
+        .footer-grid ul {
+            list-style: none;
+        }
+
+        .footer-grid ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-grid ul li a {
+            color: #ffffff;
+            font-size: 13px;
+            text-decoration: none;
+            transition: color 0.25s;
+        }
+
+        .footer-grid ul li a:hover {
+            color: var(--gold);
+        }
+
+        footer .bottom {
+            text-align: center;
+            font-size: 12px;
+            color: #a0a0a0;
+            padding-top: 22px;
+            letter-spacing: 0.03em;
+        }
+
+        @media (max-width: 800px) {
+            nav {
+                flex-direction: column;
+                gap: 16px;
+                padding: 20px;
+            }
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 16px;
+            }
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="announce">Your story, beautifully told · 60-day returns · Free shipping over R800</div>
+
+    <!-- Navbar -->
+    <nav>
+        <h1>GNOCE <span>Jewelry</span></h1>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="frequently-asked-questions.html" class="active">FAQ</a></li>
+            <li><a href="customer-care.html">Care</a></li>
+            <li><a href="contacts.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Page banner -->
+    <section class="page-banner">
+        <span class="eyebrow">Help &amp; Answers</span>
+        <h2>Frequently Asked Questions</h2>
+        <div class="rule"></div>
+        <p>Find immediate answers to questions about orders, shipping within South Africa, materials, ring sizes, and custom engraving.</p>
+    </section>
+
+    <!-- FAQ Accordion -->
+    <main class="faq-wrap">
+
+        <!-- Category: Orders & Shipping -->
+        <section class="faq-category">
+            <h3><i class="fa-solid fa-truck-fast"></i> Shipping &amp; Delivery</h3>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>How long does delivery take in South Africa?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    Standard courier delivery takes 3 to 5 business days nationwide. For bespoke, photo-engraved, or custom name necklaces, please allow an additional 2 to 4 working days for careful craftsmanship before dispatch.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>How much is shipping?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    We offer <strong>Free Courier Delivery</strong> on all orders over R800. For orders under R800, a standard flat-rate delivery fee of R99 applies across all South African provinces.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Can I track my order once dispatched?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    Yes! As soon as your jewelry is packaged and dispatched, you will receive an email and SMS with a direct tracking link to monitor your delivery in real-time.
+                </div>
+            </div>
+        </section>
+
+        <!-- Category: Products & Sizing -->
+        <section class="faq-category">
+            <h3><i class="fa-solid fa-gem"></i> Materials &amp; Sizing</h3>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>What materials does GNOCE use?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    GNOCE pieces are crafted from 925 Sterling Silver, 18k Yellow Gold Vermeil, and Rose Gold blends, accented with AAA Cubic Zirconia crystals and hand-painted enamel. All pieces are nickel-free, lead-free, and hypoallergenic.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>How do I determine my ring size?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    You can wrap a thin strip of paper or string around your chosen finger, mark where it overlaps, and measure the length in millimeters to find the circumference. Match this measurement with our standard SA/UK ring size chart or contact customer care for guidance.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Can I customize or engrave a necklace or charm?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    Yes! We offer photo projection necklaces, engraved birthstone charms, and personalized name necklaces. Simply upload your high-resolution photo or chosen text during checkout.
+                </div>
+            </div>
+        </section>
+
+        <!-- Category: Returns & Warranty -->
+        <section class="faq-category">
+            <h3><i class="fa-solid fa-rotate-left"></i> Returns &amp; Customer Care</h3>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>What is your returns policy?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    We offer a hassle-free <strong>60-Day Return Guarantee</strong> on all standard jewelry pieces in unworn, original condition with packaging. Personalized items with custom photo engravings are backed by our quality guarantee.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>How should I care for my GNOCE jewelry?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    Store your jewelry in the provided velvet pouch or airtight box when not in use. Avoid contact with perfumes, lotions, chlorinated pool water, and harsh chemicals. Gently polish with a microfiber cloth to keep the shine brilliant.
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Box -->
+        <div class="faq-contact-card">
+            <h4>Still Have Questions?</h4>
+            <p>Our friendly customer care team is available Monday to Friday to assist with sizing, custom orders, or order status.</p>
+            <a href="contacts.html" class="btn-gold">Contact Customer Support</a>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-grid">
+            <div>
+                <h5>Shop</h5>
+                <ul>
+                    <li><a href="products.html">All Jewelry</a></li>
+                    <li><a href="products.html">Charms</a></li>
+                    <li><a href="products.html">Necklaces</a></li>
+                    <li><a href="products.html">Bracelets</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5>Support</h5>
+                <ul>
+                    <li><a href="frequently-asked-questions.html">FAQ</a></li>
+                    <li><a href="customer-care.html">Shipping Info</a></li>
+                    <li><a href="customer-care.html">Returns Policy</a></li>
+                    <li><a href="contacts.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5>About</h5>
+                <ul>
+                    <li><a href="about.html">Our Story</a></li>
+                    <li><a href="services.html">Services</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5>Working Hours</h5>
+                <ul>
+                    <li style="color:#ffffff;">Mon – Fri: 9AM – 5PM</li>
+                    <li style="color:#ffffff;">Saturday: 9AM – 2PM</li>
+                    <li style="color:#ffffff;">Sunday: Closed</li>
+                </ul>
+            </div>
+            <div>
+                <h5>Follow Us</h5>
+                <ul>
+                    <li><a href="https://facebook.com">Facebook</a></li>
+                    <li><a href="https://instagram.com">Instagram</a></li>
+                    <li><a href="https://whatsapp.com">WhatsApp</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="bottom">
+            <p>&copy; 2026 GNOCE Jewelry. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Interactive accordion
+        document.querySelectorAll('.faq-question').forEach(header => {
+            header.addEventListener('click', () => {
+                const item = header.parentElement;
+                const wasActive = item.classList.contains('active');
+                
+                // Optional: Close others in same category
+                const siblings = item.parentElement.querySelectorAll('.faq-item');
+                siblings.forEach(s => s.classList.remove('active'));
+                
+                if (!wasActive) {
+                    item.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
